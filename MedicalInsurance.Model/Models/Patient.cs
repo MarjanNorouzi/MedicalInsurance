@@ -29,7 +29,7 @@ namespace MedicalInsurance.Model.Models
 
         [Required]
         [StringLength(1)]
-        public string Sexual { get; set; }
+        public string Gender { get; set; }
 
 
 

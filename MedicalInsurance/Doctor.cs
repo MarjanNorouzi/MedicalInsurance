@@ -39,7 +39,7 @@ namespace MedicalInsurance.UI
                         Name = dataRow["Name"].ToString()!,
                         Family = dataRow["Family"].ToString()!,
                         BirthDate = Convert.ToDateTime(dataRow["BirthDate"].ToString()),
-                        Sexual = dataRow["Sexual"].ToString()!,
+                        Gender = dataRow["Gender"].ToString()!,
                     };
                 }
 
@@ -49,7 +49,7 @@ namespace MedicalInsurance.UI
 
                 //ToDo = Should Get Type Of Insurance From DateBase
                 ComboInsuranceType.Text = patient.Family.ToString();
-                ComboSexual.Text = patient.Sexual.ToString();
+                ComboSexual.Text = patient.Gender.ToString();
                 groupBox3.Enabled = false;
             }
 

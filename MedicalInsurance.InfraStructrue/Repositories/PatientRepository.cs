@@ -21,7 +21,7 @@ namespace MedicalInsurance.InfraStructrue.Repositories
             cmd.Parameters.AddWithValue("@Family", patient.Family);
             cmd.Parameters.AddWithValue("@BirthDate", DateTime.Now.ToString());
             cmd.Parameters.AddWithValue("@NationalCode", patient.NationalCode);
-            cmd.Parameters.AddWithValue("@Sexual", patient.Sexual);
+            cmd.Parameters.AddWithValue("@Gender", patient.Gender);
 
 
             sqlConnection.Open();
