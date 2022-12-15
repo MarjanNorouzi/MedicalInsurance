@@ -8,4 +8,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MedicalInsurance.InfraStructrue\MedicalInsurance.InfraStructrue.csproj" />
+    <ProjectReference Include="..\MedicalInsurance.Model\MedicalInsurance.Model.csproj" />
+  </ItemGroup>
+
 </Project>

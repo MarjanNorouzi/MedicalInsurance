@@ -9,8 +9,14 @@
 
   <ItemGroup>
     <Folder Include="Contexts\" />
-    <Folder Include="IRepositories\" />
-    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MedicalInsurance.Model\MedicalInsurance.Model.csproj" />
   </ItemGroup>
 
 </Project>
