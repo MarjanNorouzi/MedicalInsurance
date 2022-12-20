@@ -31,10 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.BtnPrescription = new System.Windows.Forms.Button();
+            this.ComboPrescriptionType = new System.Windows.Forms.ComboBox();
+            this.LblPrescriptionType = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.BtnSave = new System.Windows.Forms.Button();
             this.ComboInsuranceType = new System.Windows.Forms.ComboBox();
-            this.ComboSexual = new System.Windows.Forms.ComboBox();
+            this.ComboGender = new System.Windows.Forms.ComboBox();
             this.TxtFamily = new System.Windows.Forms.TextBox();
             this.TxtName = new System.Windows.Forms.TextBox();
             this.TxtPrescriptionDate = new System.Windows.Forms.MaskedTextBox();
@@ -50,13 +54,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Location = new System.Drawing.Point(855, 32);
+            this.groupBox1.Location = new System.Drawing.Point(854, 32);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(174, 416);
             this.groupBox1.TabIndex = 0;
@@ -65,22 +70,64 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.BtnInformation);
             this.groupBox2.Controls.Add(this.TxtNationalCode);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(12, 32);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(837, 406);
+            this.groupBox2.Size = new System.Drawing.Size(837, 416);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.BtnPrescription);
+            this.groupBox4.Controls.Add(this.ComboPrescriptionType);
+            this.groupBox4.Controls.Add(this.LblPrescriptionType);
+            this.groupBox4.Location = new System.Drawing.Point(18, 279);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(819, 119);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "groupBox4";
+            // 
+            // BtnPrescription
+            // 
+            this.BtnPrescription.Location = new System.Drawing.Point(386, 14);
+            this.BtnPrescription.Name = "BtnPrescription";
+            this.BtnPrescription.Size = new System.Drawing.Size(130, 29);
+            this.BtnPrescription.TabIndex = 6;
+            this.BtnPrescription.Text = "نوشتن نسخه";
+            this.BtnPrescription.UseVisualStyleBackColor = true;
+            this.BtnPrescription.Click += new System.EventHandler(this.BtnPrescription_Click);
+            // 
+            // ComboPrescriptionType
+            // 
+            this.ComboPrescriptionType.FormattingEnabled = true;
+            this.ComboPrescriptionType.Location = new System.Drawing.Point(547, 15);
+            this.ComboPrescriptionType.Name = "ComboPrescriptionType";
+            this.ComboPrescriptionType.Size = new System.Drawing.Size(125, 28);
+            this.ComboPrescriptionType.TabIndex = 5;
+            // 
+            // LblPrescriptionType
+            // 
+            this.LblPrescriptionType.AutoSize = true;
+            this.LblPrescriptionType.Location = new System.Drawing.Point(718, 23);
+            this.LblPrescriptionType.Name = "LblPrescriptionType";
+            this.LblPrescriptionType.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.LblPrescriptionType.Size = new System.Drawing.Size(73, 20);
+            this.LblPrescriptionType.TabIndex = 4;
+            this.LblPrescriptionType.Text = "نوع نسخه:";
+            this.LblPrescriptionType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.BtnSave);
             this.groupBox3.Controls.Add(this.ComboInsuranceType);
-            this.groupBox3.Controls.Add(this.ComboSexual);
+            this.groupBox3.Controls.Add(this.ComboGender);
             this.groupBox3.Controls.Add(this.TxtFamily);
             this.groupBox3.Controls.Add(this.TxtName);
             this.groupBox3.Controls.Add(this.TxtPrescriptionDate);
@@ -93,14 +140,14 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Location = new System.Drawing.Point(12, 84);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(825, 208);
+            this.groupBox3.Size = new System.Drawing.Size(825, 205);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(6, 173);
+            this.BtnSave.Location = new System.Drawing.Point(6, 160);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(94, 29);
             this.BtnSave.TabIndex = 3;
@@ -119,16 +166,16 @@
             this.ComboInsuranceType.Size = new System.Drawing.Size(125, 28);
             this.ComboInsuranceType.TabIndex = 2;
             // 
-            // ComboSexual
+            // ComboGender
             // 
-            this.ComboSexual.FormattingEnabled = true;
-            this.ComboSexual.Items.AddRange(new object[] {
+            this.ComboGender.FormattingEnabled = true;
+            this.ComboGender.Items.AddRange(new object[] {
             "زن",
             "مرد"});
-            this.ComboSexual.Location = new System.Drawing.Point(213, 71);
-            this.ComboSexual.Name = "ComboSexual";
-            this.ComboSexual.Size = new System.Drawing.Size(125, 28);
-            this.ComboSexual.TabIndex = 2;
+            this.ComboGender.Location = new System.Drawing.Point(213, 71);
+            this.ComboGender.Name = "ComboGender";
+            this.ComboGender.Size = new System.Drawing.Size(125, 28);
+            this.ComboGender.TabIndex = 2;
             // 
             // TxtFamily
             // 
@@ -265,13 +312,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 609);
+            this.ClientSize = new System.Drawing.Size(1040, 609);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Doctor";
             this.Text = "Doctor";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -285,7 +334,7 @@
         private GroupBox groupBox3;
         private Button BtnSave;
         private ComboBox ComboInsuranceType;
-        private ComboBox ComboSexual;
+        private ComboBox ComboGender;
         private TextBox TxtFamily;
         private TextBox TxtName;
         private MaskedTextBox TxtPrescriptionDate;
@@ -300,5 +349,9 @@
         private MaskedTextBox TxtNationalCode;
         private Label label1;
         private ContextMenuStrip contextMenuStrip1;
+        private GroupBox groupBox4;
+        private ComboBox ComboPrescriptionType;
+        private Label LblPrescriptionType;
+        private Button BtnPrescription;
     }
 }

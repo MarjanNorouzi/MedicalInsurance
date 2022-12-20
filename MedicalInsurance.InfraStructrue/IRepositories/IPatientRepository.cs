@@ -10,10 +10,7 @@ namespace MedicalInsurance.InfraStructrue.IRepositories
 {
     public interface IPatientRepository : IQueryRepository
     {
-       
         void Add(Patient patient);
-        
         DataTable GetByNationalCode(string nationalCode);
-        
     }
 }

@@ -30,8 +30,5 @@ namespace MedicalInsurance.Model.Models
         [Required]
         [StringLength(1)]
         public string Gender { get; set; }
-
-
-
     }
 }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace MedicalInsurance.InfraStructrue.Repositories
 {
+
     public class PatientRepository : QueryRepository, IPatientRepository
     {
         public void Add(Patient patient)
@@ -19,7 +20,7 @@ namespace MedicalInsurance.InfraStructrue.Repositories
 
             cmd.Parameters.AddWithValue("@Name", patient.Name);
             cmd.Parameters.AddWithValue("@Family", patient.Family);
-            cmd.Parameters.AddWithValue("@BirthDate", DateTime.Now.ToString());
+            cmd.Parameters.AddWithValue("@BirthDate", DateTime.Now);
             cmd.Parameters.AddWithValue("@NationalCode", patient.NationalCode);
             cmd.Parameters.AddWithValue("@Gender", patient.Gender);
 
