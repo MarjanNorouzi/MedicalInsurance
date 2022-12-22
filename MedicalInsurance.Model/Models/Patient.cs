@@ -21,7 +21,7 @@ namespace MedicalInsurance.Model.Models
         public string Family { get; set; } = null!;
 
         [Required]
-        public DateTime BirthDate { get; set; }
+        public string BirthDate { get; set; }
 
         [Required]
         [StringLength(10)]

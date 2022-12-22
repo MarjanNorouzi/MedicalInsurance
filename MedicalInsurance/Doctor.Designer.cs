@@ -33,8 +33,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.BtnPrescription = new System.Windows.Forms.Button();
-            this.ComboPrescriptionType = new System.Windows.Forms.ComboBox();
-            this.LblPrescriptionType = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.BtnSave = new System.Windows.Forms.Button();
             this.ComboInsuranceType = new System.Windows.Forms.ComboBox();
@@ -85,8 +83,6 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.BtnPrescription);
-            this.groupBox4.Controls.Add(this.ComboPrescriptionType);
-            this.groupBox4.Controls.Add(this.LblPrescriptionType);
             this.groupBox4.Location = new System.Drawing.Point(18, 279);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(819, 119);
@@ -96,32 +92,13 @@
             // 
             // BtnPrescription
             // 
-            this.BtnPrescription.Location = new System.Drawing.Point(386, 14);
+            this.BtnPrescription.Location = new System.Drawing.Point(6, 26);
             this.BtnPrescription.Name = "BtnPrescription";
-            this.BtnPrescription.Size = new System.Drawing.Size(130, 29);
+            this.BtnPrescription.Size = new System.Drawing.Size(782, 29);
             this.BtnPrescription.TabIndex = 6;
             this.BtnPrescription.Text = "نوشتن نسخه";
             this.BtnPrescription.UseVisualStyleBackColor = true;
             this.BtnPrescription.Click += new System.EventHandler(this.BtnPrescription_Click);
-            // 
-            // ComboPrescriptionType
-            // 
-            this.ComboPrescriptionType.FormattingEnabled = true;
-            this.ComboPrescriptionType.Location = new System.Drawing.Point(547, 15);
-            this.ComboPrescriptionType.Name = "ComboPrescriptionType";
-            this.ComboPrescriptionType.Size = new System.Drawing.Size(125, 28);
-            this.ComboPrescriptionType.TabIndex = 5;
-            // 
-            // LblPrescriptionType
-            // 
-            this.LblPrescriptionType.AutoSize = true;
-            this.LblPrescriptionType.Location = new System.Drawing.Point(718, 23);
-            this.LblPrescriptionType.Name = "LblPrescriptionType";
-            this.LblPrescriptionType.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.LblPrescriptionType.Size = new System.Drawing.Size(73, 20);
-            this.LblPrescriptionType.TabIndex = 4;
-            this.LblPrescriptionType.Text = "نوع نسخه:";
-            this.LblPrescriptionType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox3
             // 
@@ -320,7 +297,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -350,8 +326,6 @@
         private Label label1;
         private ContextMenuStrip contextMenuStrip1;
         private GroupBox groupBox4;
-        private ComboBox ComboPrescriptionType;
-        private Label LblPrescriptionType;
         private Button BtnPrescription;
     }
 }

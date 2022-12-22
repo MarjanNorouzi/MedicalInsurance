@@ -14,7 +14,7 @@ namespace MedicalInsurance.InfraStructrue.Repositories
 
         public QueryRepository()
         {
-            sqlConnection = new SqlConnection(ConnectionString.MedicalInsuranceConnectionString);
+            sqlConnection = new SqlConnection(ConnectionString.InsuranceConnectionString);
         }
     }
 }

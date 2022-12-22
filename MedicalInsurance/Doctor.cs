@@ -7,6 +7,7 @@ namespace MedicalInsurance.UI
     public partial class Doctor : Form
     {
         private readonly IPatientRepository patientRepository;
+        private bool patientExist = false;
         public Doctor()
         {
             IsMdiContainer = true;
@@ -24,6 +25,7 @@ namespace MedicalInsurance.UI
             {
                 FillInformationTextBoxs(dt);
                 ChangeGroupBox3State(dt);
+                patientExist = true;
             }
 
             if (dt.Rows.Count == 0)
@@ -44,7 +46,7 @@ namespace MedicalInsurance.UI
                 {
                     Name = dataRow["Name"].ToString()!,
                     Family = dataRow["Family"].ToString()!,
-                    BirthDate = Convert.ToDateTime(dataRow["BirthDate"].ToString()),
+                    BirthDate = dataRow["BirthDate"].ToString(),
                     Gender = dataRow["Gender"].ToString()!,
                 };
             }
@@ -55,7 +57,7 @@ namespace MedicalInsurance.UI
 
             //ToDo = Should Get Type Of Insurance From DateBase
             ComboInsuranceType.SelectedIndex = 0;
-            
+
             if (patient?.Gender.ToString() == "F")
                 ComboGender.SelectedItem = "زن";
             else
@@ -91,7 +93,7 @@ namespace MedicalInsurance.UI
                 ComboInsuranceType.Enabled = true;
                 BtnSave.Enabled = true;
             }
-            
+
         }
 
         private void FillComboBoxs()
@@ -105,9 +107,6 @@ namespace MedicalInsurance.UI
             ComboGender.Items.Add("زن");
             ComboGender.Items.Add("مرد");
 
-            ComboPrescriptionType.Items.Add("دارو");
-            ComboPrescriptionType.Items.Add("رادیولوژی");
-            ComboPrescriptionType.Items.Add("خدمات");
 
 
             var dt2 = patientRepository.GetByNationalCode(TxtNationalCode.Text);
@@ -120,7 +119,7 @@ namespace MedicalInsurance.UI
                 {
                     Name = dataRow["Name"].ToString()!,
                     Family = dataRow["Family"].ToString()!,
-                    BirthDate = Convert.ToDateTime(dataRow["BirthDate"].ToString()),
+                    BirthDate = dataRow["BirthDate"].ToString(),
                     Gender = dataRow["Gender"].ToString()!,
                 };
             }
@@ -140,12 +139,13 @@ namespace MedicalInsurance.UI
             {
                 Name = TxtName.Text,
                 Family = TxtFamily.Text,
-                BirthDate = Convert.ToDateTime(TxtPrescriptionDate.Text),
+                BirthDate = TxtPrescriptionDate.Text,
                 Gender = gender,
                 NationalCode = TxtNationalCode.Text,
             };
 
             patientRepository.Add(newPatient);
+            patientExist = true;
 
         }
 
@@ -169,8 +169,17 @@ namespace MedicalInsurance.UI
 
         private void BtnPrescription_Click(object sender, EventArgs e)
         {
-            dispensing frm = new dispensing();
-            frm.Show();
+            if (patientExist)
+            {
+                dispensing frm = new dispensing();
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("بیمار را انتخاب کنید");
+            }    
+
+
         }
     }
 }
