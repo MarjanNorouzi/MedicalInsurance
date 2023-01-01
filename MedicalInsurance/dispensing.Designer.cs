@@ -32,18 +32,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.TxtCount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.ComboTypeOfDrug = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.PrescriptionSave = new System.Windows.Forms.Button();
             this.DrugSave = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -51,12 +55,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.ServiceSave = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtDosage = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -74,11 +72,10 @@
             this.BtnConfirm.TabIndex = 0;
             this.BtnConfirm.Text = "ثبت نهایی";
             this.BtnConfirm.UseVisualStyleBackColor = true;
-            this.BtnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(315, 9);
@@ -105,10 +102,8 @@
             this.tabPage1.Controls.Add(this.dataGridView3);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.TxtDosage);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.TxtCount);
-            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.comboBox3);
@@ -118,7 +113,7 @@
             this.tabPage1.Controls.Add(this.comboBox2);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.PrescriptionSave);
             this.tabPage1.Controls.Add(this.DrugSave);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
@@ -128,14 +123,22 @@
             this.tabPage1.Text = "دارو";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(19, 226);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(573, 43);
+            this.richTextBox1.TabIndex = 5;
+            this.richTextBox1.Text = "";
+            // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 358);
+            this.dataGridView3.Location = new System.Drawing.Point(131, 275);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 29;
-            this.dataGridView3.Size = new System.Drawing.Size(705, 101);
+            this.dataGridView3.Size = new System.Drawing.Size(574, 214);
             this.dataGridView3.TabIndex = 4;
             // 
             // label5
@@ -155,6 +158,15 @@
             this.label8.Size = new System.Drawing.Size(113, 20);
             this.label8.TabIndex = 2;
             this.label8.Text = "دستورات متفرقه";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(242, 117);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 20);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "دوز فرم:";
             // 
             // TxtCount
             // 
@@ -198,6 +210,17 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "زمان مصرف:";
             // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "mg",
+            "percent"});
+            this.comboBox4.Location = new System.Drawing.Point(30, 114);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(195, 28);
+            this.comboBox4.TabIndex = 1;
+            // 
             // ComboTypeOfDrug
             // 
             this.ComboTypeOfDrug.FormattingEnabled = true;
@@ -238,9 +261,19 @@
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // PrescriptionSave
+            // 
+            this.PrescriptionSave.Location = new System.Drawing.Point(3, 460);
+            this.PrescriptionSave.Name = "PrescriptionSave";
+            this.PrescriptionSave.Size = new System.Drawing.Size(105, 29);
+            this.PrescriptionSave.TabIndex = 0;
+            this.PrescriptionSave.Text = "ثبت نسخه";
+            this.PrescriptionSave.UseVisualStyleBackColor = true;
+            this.PrescriptionSave.Click += new System.EventHandler(this.PrescriptionSave_Click);
+            // 
             // DrugSave
             // 
-            this.DrugSave.Location = new System.Drawing.Point(6, 323);
+            this.DrugSave.Location = new System.Drawing.Point(6, 275);
             this.DrugSave.Name = "DrugSave";
             this.DrugSave.Size = new System.Drawing.Size(105, 29);
             this.DrugSave.TabIndex = 0;
@@ -310,61 +343,7 @@
             this.ServiceSave.Text = "ثبت";
             this.ServiceSave.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 460);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "ثبت";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.DrugSave_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(19, 226);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(573, 91);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(609, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "دوز:";
-            // 
-            // TxtDosage
-            // 
-            this.TxtDosage.Location = new System.Drawing.Point(397, 114);
-            this.TxtDosage.Name = "TxtDosage";
-            this.TxtDosage.Size = new System.Drawing.Size(195, 27);
-            this.TxtDosage.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(242, 117);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 20);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "دوز فرم:";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "mg",
-            "percent"});
-            this.comboBox4.Location = new System.Drawing.Point(30, 114);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(195, 28);
-            this.comboBox4.TabIndex = 1;
-            // 
-            // dispensing
+            // Dispensing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -372,7 +351,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnConfirm);
-            this.Name = "dispensing";
+            this.Name = "Dispensing";
             this.Text = "Prescription";
             this.Load += new System.EventHandler(this.Form_Load);
             this.tabControl1.ResumeLayout(false);
@@ -413,11 +392,9 @@
         private DataGridView dataGridView2;
         private DataGridView dataGridView3;
         private ComboBox ComboTypeOfDrug;
-        private Button button1;
+        private Button PrescriptionSave;
         private RichTextBox richTextBox1;
-        private TextBox TxtDosage;
         private Label label9;
-        private Label label4;
         private ComboBox comboBox4;
     }
 }

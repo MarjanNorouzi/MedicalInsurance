@@ -180,7 +180,7 @@
             // TxtBirthDate
             // 
             this.TxtBirthDate.Location = new System.Drawing.Point(553, 71);
-            this.TxtBirthDate.Mask = "0000/00/00";
+            this.TxtBirthDate.Mask = "00/00/0000";
             this.TxtBirthDate.Name = "TxtBirthDate";
             this.TxtBirthDate.Size = new System.Drawing.Size(125, 27);
             this.TxtBirthDate.TabIndex = 1;

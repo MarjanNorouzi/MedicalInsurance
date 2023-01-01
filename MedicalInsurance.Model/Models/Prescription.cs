@@ -13,13 +13,13 @@ namespace MedicalInsurance.Model.Models
         public int Id { get; set; }
 
         [Required]
-        public string DrId { get; set; } = null!;
+        public int DrId { get; set; } 
 
         [Required]
-        public string PrescriptionType { get; set; } = null!;
+        public int PrescriptionTypeId { get; set; }
 
         [Required]
-        public string PersonId { get; set; } = null!;
+        public int PationtId { get; set; }
 
         [Required]
         [StringLength(64)]

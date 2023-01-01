@@ -14,15 +14,18 @@ namespace MedicalInsurance.Model.Models
 
         [Required]
         [StringLength(64)]
-        public string DrugName { get; set; } = null!;
+        public string DrugName { get; set; }
 
         [Required]
         public int Count { get; set; }
 
         [Required]
-        public int Dosage { get; set; }
+        public int DrugTypeId { get; set; }
 
-        public DateTime ExpireDate { get; set; }
+        //[Required]
+        //public int Dosage { get; set; }
+
+        //public DateTime ExpireDate { get; set; }
 
     }
 }

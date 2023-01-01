@@ -5,7 +5,9 @@ namespace MedicalInsurance.InfraStructrue.IRepositories
 {
     public interface IMedicineRepository : IQueryRepository
     {
-        void Add(Medicine medicine, int TypeOfMedicineId, int PrescriptionId);
+        void Add(Medicine medicine, int PrescriptionId);
         DataTable GetMedicineType();
+        
+
     }
 }

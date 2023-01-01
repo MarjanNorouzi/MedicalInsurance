@@ -20,7 +20,7 @@ namespace MedicalInsurance.InfraStructrue.Repositories
 
             cmd.Parameters.AddWithValue("@Name", patient.Name);
             cmd.Parameters.AddWithValue("@Family", patient.Family);
-            cmd.Parameters.AddWithValue("@BirthDate", DateTime.Now);
+            cmd.Parameters.AddWithValue("@BirthDate", patient.BirthDate);
             cmd.Parameters.AddWithValue("@NationalCode", patient.NationalCode);
             cmd.Parameters.AddWithValue("@Gender", patient.Gender);
 

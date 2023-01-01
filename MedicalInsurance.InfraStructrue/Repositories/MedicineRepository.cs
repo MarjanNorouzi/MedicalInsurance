@@ -13,15 +13,14 @@ namespace MedicalInsurance.InfraStructrue.Repositories
     public class MedicineRepository : QueryRepository, IMedicineRepository
     {
 
-        public void Add(Medicine medicine, int TypeOfMedicineId, int PrescriptionId)
+        public void Add(Medicine medicine, int PrescriptionId)
         {
             var cmd = new SqlCommand("Usp_Medicine_Add", sqlConnection);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@DrugName", medicine.DrugName);
             cmd.Parameters.AddWithValue("@Count", medicine.Count);
-            cmd.Parameters.AddWithValue("@Dosage", medicine.Dosage);
-            cmd.Parameters.AddWithValue("@TypeOfMedicineId", TypeOfMedicineId);
+            cmd.Parameters.AddWithValue("@TypeOfMedicineId", medicine.DrugTypeId);
             cmd.Parameters.AddWithValue("@PrescriptionId", PrescriptionId);
 
 
@@ -34,7 +33,20 @@ namespace MedicalInsurance.InfraStructrue.Repositories
 
         public DataTable GetAll(string procedureName)
         {
-            throw new NotImplementedException();
+            var dt = new DataTable();
+
+            SqlCommand cmd = new SqlCommand("Usp_ServiceMedicine_GetAll", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            sqlConnection.Open();
+
+            SqlDataReader? reader = cmd.ExecuteReader();
+            dt.Load(reader);
+
+            sqlConnection.Close();
+
+            return dt;
         }
 
         public DataTable GetById(string procedureName, int id)

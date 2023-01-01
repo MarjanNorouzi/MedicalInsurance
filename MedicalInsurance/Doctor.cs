@@ -66,6 +66,7 @@ namespace MedicalInsurance.UI
 
         private void ChangeGroupBox3State(System.Data.DataTable dt)
         {
+            
             if (dt.Rows.Count == 1)
             {
                 TxtName.ReadOnly = true;
@@ -139,7 +140,7 @@ namespace MedicalInsurance.UI
             {
                 Name = TxtName.Text,
                 Family = TxtFamily.Text,
-                BirthDate = TxtPrescriptionDate.Text,
+                BirthDate = TxtBirthDate.Text,
                 Gender = gender,
                 NationalCode = TxtNationalCode.Text,
             };
@@ -171,7 +172,7 @@ namespace MedicalInsurance.UI
         {
             if (patientExist)
             {
-                dispensing frm = new dispensing();
+                Dispensing frm = new Dispensing();
                 frm.Show();
             }
             else
