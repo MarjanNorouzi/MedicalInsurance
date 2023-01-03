@@ -59,7 +59,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Location = new System.Drawing.Point(854, 32);
+            this.groupBox1.Location = new System.Drawing.Point(851, 32);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(174, 416);
             this.groupBox1.TabIndex = 0;
@@ -85,7 +85,7 @@
             this.groupBox4.Controls.Add(this.BtnPrescription);
             this.groupBox4.Location = new System.Drawing.Point(18, 279);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(819, 119);
+            this.groupBox4.Size = new System.Drawing.Size(819, 253);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "groupBox4";
@@ -289,7 +289,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 609);
+            this.ClientSize = new System.Drawing.Size(1037, 609);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Doctor";

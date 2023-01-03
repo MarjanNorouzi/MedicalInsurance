@@ -32,12 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.TxtCount = new System.Windows.Forms.MaskedTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.TxtCount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -50,6 +51,8 @@
             this.PrescriptionSave = new System.Windows.Forms.Button();
             this.DrugSave = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.RadiologySave = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -98,12 +101,12 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.TxtCount);
             this.tabPage1.Controls.Add(this.richTextBox1);
             this.tabPage1.Controls.Add(this.dataGridView3);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.TxtCount);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.comboBox3);
@@ -123,6 +126,15 @@
             this.tabPage1.Text = "دارو";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // TxtCount
+            // 
+            this.TxtCount.Location = new System.Drawing.Point(397, 85);
+            this.TxtCount.Mask = "00000";
+            this.TxtCount.Name = "TxtCount";
+            this.TxtCount.Size = new System.Drawing.Size(195, 27);
+            this.TxtCount.TabIndex = 6;
+            this.TxtCount.ValidatingType = typeof(int);
+            // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(19, 226);
@@ -134,12 +146,24 @@
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Delete});
             this.dataGridView3.Location = new System.Drawing.Point(131, 275);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 29;
             this.dataGridView3.Size = new System.Drawing.Size(574, 214);
             this.dataGridView3.TabIndex = 4;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "حذف";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "حذف";
+            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.Width = 125;
             // 
             // label5
             // 
@@ -167,13 +191,6 @@
             this.label9.Size = new System.Drawing.Size(60, 20);
             this.label9.TabIndex = 2;
             this.label9.Text = "دوز فرم:";
-            // 
-            // TxtCount
-            // 
-            this.TxtCount.Location = new System.Drawing.Point(397, 69);
-            this.TxtCount.Name = "TxtCount";
-            this.TxtCount.Size = new System.Drawing.Size(195, 27);
-            this.TxtCount.TabIndex = 3;
             // 
             // label3
             // 
@@ -277,12 +294,14 @@
             this.DrugSave.Name = "DrugSave";
             this.DrugSave.Size = new System.Drawing.Size(105, 29);
             this.DrugSave.TabIndex = 0;
-            this.DrugSave.Text = "ثبت";
+            this.DrugSave.Text = "افزودن";
             this.DrugSave.UseVisualStyleBackColor = true;
             this.DrugSave.Click += new System.EventHandler(this.DrugSave_Click);
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.comboBox5);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.RadiologySave);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
@@ -292,6 +311,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "رادیولوژی";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(633, 57);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "label4";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(466, 54);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(151, 28);
+            this.comboBox5.TabIndex = 3;
             // 
             // dataGridView1
             // 
@@ -309,8 +345,9 @@
             this.RadiologySave.Name = "RadiologySave";
             this.RadiologySave.Size = new System.Drawing.Size(94, 29);
             this.RadiologySave.TabIndex = 1;
-            this.RadiologySave.Text = "ثبت";
+            this.RadiologySave.Text = "ثبت نسخه";
             this.RadiologySave.UseVisualStyleBackColor = true;
+            this.RadiologySave.Click += new System.EventHandler(this.RadiologySave_Click);
             // 
             // tabPage3
             // 
@@ -342,6 +379,7 @@
             this.ServiceSave.TabIndex = 1;
             this.ServiceSave.Text = "ثبت";
             this.ServiceSave.UseVisualStyleBackColor = true;
+            this.ServiceSave.Click += new System.EventHandler(this.ServiceSave_Click);
             // 
             // Dispensing
             // 
@@ -359,6 +397,7 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -376,7 +415,6 @@
         private TabPage tabPage2;
         private Label label5;
         private Label label8;
-        private TextBox TxtCount;
         private Label label3;
         private Label label7;
         private ComboBox comboBox3;
@@ -388,7 +426,6 @@
         private Button RadiologySave;
         private TabPage tabPage3;
         private Button ServiceSave;
-        private DataGridView dataGridView1;
         private DataGridView dataGridView2;
         private DataGridView dataGridView3;
         private ComboBox ComboTypeOfDrug;
@@ -396,5 +433,10 @@
         private RichTextBox richTextBox1;
         private Label label9;
         private ComboBox comboBox4;
+        private DataGridViewButtonColumn Delete;
+        private Label label4;
+        private ComboBox comboBox5;
+        private DataGridView dataGridView1;
+        private MaskedTextBox TxtCount;
     }
 }

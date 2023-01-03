@@ -43,13 +43,7 @@ namespace MedicalInsurance.InfraStructrue.Repositories
 
             sqlConnection.Open();
 
-            SqlDataReader? reader = cmd.ExecuteReader();
-            if (reader.HasRows)
-            {
-
-                reader.Read();
-                dt = reader.GetInt32(0);
-            }
+            dt = Convert.ToDecimal(cmd.ExecuteScalar());
 
             sqlConnection.Close();
             return dt;

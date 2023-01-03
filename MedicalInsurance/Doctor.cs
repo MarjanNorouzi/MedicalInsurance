@@ -66,7 +66,7 @@ namespace MedicalInsurance.UI
 
         private void ChangeGroupBox3State(System.Data.DataTable dt)
         {
-            
+
             if (dt.Rows.Count == 1)
             {
                 TxtName.ReadOnly = true;
@@ -170,15 +170,23 @@ namespace MedicalInsurance.UI
 
         private void BtnPrescription_Click(object sender, EventArgs e)
         {
+            Prescription prescription = new Prescription()
+            {
+                DrId = 1,
+                PationtId = 1,
+                Insurance = ComboInsuranceType.Text,
+                Date = DateOnly.FromDateTime(DateTime.Now)
+            };
+
+
             if (patientExist)
             {
-                Dispensing frm = new Dispensing();
+                Dispensing frm = new Dispensing(prescription);
                 frm.Show();
             }
+
             else
-            {
                 MessageBox.Show("بیمار را انتخاب کنید");
-            }    
 
 
         }
