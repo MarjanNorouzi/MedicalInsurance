@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace MedicalInsurance.UI
+﻿namespace MedicalInsurance.UI
 {
     public partial class LogIn : Form
     {
         public LogIn()
         {
             InitializeComponent();
-            Validate();
+
         }
 
         public void Validate()
@@ -31,20 +21,20 @@ namespace MedicalInsurance.UI
         private void BtnLogIn_Click(object sender, EventArgs e)
         {
             this.Hide();
-
+            Validate();
             if (RBtnDoctor.Checked)
             {
-                var frm = new LogIn();
+                var frm = new Doctor();
+                frm.Show();
             }
             if (RBtnpharmacy.Checked)
             {
-
+                var frm = new Pharmacy();
+                frm.Show();
             }
             if (RBtnInsurance.Checked)
             {
-
-
-
+                
             }
         }
     }
